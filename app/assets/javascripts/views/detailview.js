@@ -14,6 +14,8 @@ app.DetailView = Backbone.View.extend({
   events: {
     'click .navHome': 'home',
     'click .navRemix': 'remix',
+    'click .navClose': 'modalClose',
+    'click .explain': 'modalOpen'
   },
 
   initialize: function() {
@@ -63,4 +65,12 @@ app.DetailView = Backbone.View.extend({
     this.lineView.remove();
     Backbone.View.prototype.remove.apply(this, arguments);
   },
+
+  modalClose: function() {
+    this.$('.modal').hide()
+  },
+
+  modalOpen: function() {
+    this.$('.modal').show()
+  }
 })
